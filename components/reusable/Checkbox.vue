@@ -31,7 +31,7 @@
       };
     },
     watch: {
-      checked(newValue) {
+      checked(newValue): void {
         this.$emit('checkboxUpdate', {
           keyName: this.keyName,
           value: newValue,

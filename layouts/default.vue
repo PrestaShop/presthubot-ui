@@ -32,9 +32,11 @@
     },
     mounted() {
       this.$nextTick(() => {
+        // @ts-ignore
         this.onResize();
       });
 
+      // @ts-ignore
       window.addEventListener('resize', this.onResize);
     },
     methods: {
@@ -45,11 +47,14 @@
       },
       onResize(): boolean {
         if (window.innerWidth < 769) {
+          // @ts-ignore
           this.isMobile = true;
         } else {
+          // @ts-ignore
           this.isMobile = false;
         }
 
+        // @ts-ignore
         return this.isMobile;
       },
     },

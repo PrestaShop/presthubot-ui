@@ -32,7 +32,7 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  import Checkbox from '~/components/reusable/Checkbox';
+  import Checkbox from '~/components/reusable/Checkbox.vue';
   // import allPrs from '~/graphql/queries/pullrequests';
 
   export default Vue.extend({
