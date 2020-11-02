@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Pull requests",
+    "route": "/",
+    "icon": "prs"
+  },
+  {
+    "id": 2,
+    "name": "Modules",
+    "route": "/modules",
+    "icon": "modules"
+  }
+]

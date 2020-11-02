@@ -1,0 +1,28 @@
+.btn {
+  padding: 7px 15px;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
+
+  i {
+    margin-right: 3px;
+  }
+}
+
+.btn-outline {
+  background: none;
+  border: 1px solid $white;
+  transition: 0.25s ease-out;
+
+  &:hover {
+    background-color: white;
+    color: $primary;
+  }
+}
