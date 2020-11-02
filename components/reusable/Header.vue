@@ -30,7 +30,7 @@
     z-index: 10;
     min-height: 50px;
     transition: 0.4s ease-out;
-    padding: 30px;
+    padding: 30px 60px;
 
     @at-root .isMobile & {
       padding: 0 15px;

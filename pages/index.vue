@@ -4,35 +4,47 @@
       <div class="top-container-content">
         <h2 class="top-container-title">Select PR inputs to start:</h2>
         <div class="top-container-toolbar">
-          <button class="btn btn-outline">
+          <button class="btn btn-outline" @click="clear()">
             <i class="material-icons">close</i>
             Clear
           </button>
         </div>
 
         <div class="top-container-checkboxes">
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Title" keyName="title" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
-          <checkbox text="Creating date" keyName="creation_date" />
+          <checkbox
+            v-for="field in fields"
+            :key="field.keyName"
+            :text="field.title"
+            @checkboxUpdate="updateCheckboxes"
+            :key-name="field.keyName"
+          />
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="content"></div>
+      <div class="content">
+        <vuetable
+          ref="vuetable"
+          :api-mode="false"
+          :fields="checkboxes.length > 0 ? checkboxes : fields"
+          :data="datas"
+          :data-manager="dataManager"
+        ></vuetable>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue';
+  import _ from 'lodash';
+  import Vuetable from 'vuetable-2';
   import Checkbox from '~/components/reusable/Checkbox.vue';
+  import { CheckboxInterface } from '~/interfaces/CheckboxInterface';
+  import { QueryController } from '~/interfaces/QueryInterface';
+  import fields from '~/constants/fields.json';
+  import datas from '~/constants/datas.json';
   // import allPrs from '~/graphql/queries/pullrequests';
 
   export default Vue.extend({
@@ -42,13 +54,65 @@
         query: allPrs,
       },
     }, */
+    data(): QueryController {
+      return {
+        checkboxes: [],
+        fields,
+        datas: {
+          data: datas,
+        },
+        perPage: 16,
+      };
+    },
     components: {
       Checkbox,
+      Vuetable,
+    },
+    methods: {
+      updateCheckboxes(checkbox: CheckboxInterface): void {
+        const containCheckbox = this.checkboxes.filter(
+          item => item.keyName === checkbox.keyName
+        );
+
+        if (containCheckbox.length > 0) {
+          this.checkboxes = this.checkboxes.filter(
+            item => item.keyName !== checkbox.keyName
+          );
+        } else if (checkbox.checked) {
+          const newCheckBox = checkbox;
+
+          newCheckBox.sortField = newCheckBox.keyName;
+          this.checkboxes.push(newCheckBox);
+        }
+      },
+      clear(): void {
+        this.checkboxes = [];
+        this.$emit('uncheckAll');
+      },
+      dataManager(sortOrder: any): any {
+        if (this.datas.data.length < 1) return;
+
+        let local = this.datas.data;
+
+        // sortOrder can be empty, so we have to check for that as well
+        if (sortOrder.length > 0) {
+          local = _.orderBy(
+            local,
+            sortOrder[0].sortField,
+            sortOrder[0].direction
+          );
+        }
+
+        // eslint-disable-next-line
+        return {
+          data: local,
+        };
+      },
     },
   });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .container {
     margin: 0 auto;
     display: flex;
@@ -57,6 +121,7 @@
     text-align: center;
     padding: 0 60px;
     margin-top: -75px;
+    margin-bottom: 50px;
   }
 
   .title {

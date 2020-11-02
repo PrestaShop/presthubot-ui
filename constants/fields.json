@@ -1,0 +1,74 @@
+[
+  {
+    "keyName": "title",
+    "name": "title",
+    "title": "Title",
+    "sortField": "title"
+  },
+  {
+    "keyName": "creation_date",
+    "title": "Creation date",
+    "name": "creation_date",
+    "sortField": "creation_date"
+  },
+  {
+    "keyName": "branch_name",
+    "name": "branch_name",
+    "title": "Branch name",
+    "sortField": "branch_name"
+  },
+  {
+    "keyName": "Nb. of comments",
+    "title": "Nb. of comments",
+    "name": "nb_comments",
+    "sortField": "Nb. of comments"
+  },
+  {
+    "keyName": "id",
+    "name": "id",
+    "title": "ID",
+    "sortField": "id"
+  },
+  {
+    "keyName": "status",
+    "name": "status",
+    "title": "Status",
+    "sortField": "status"
+  },
+  {
+    "keyName": "repository",
+    "name": "repository",
+    "title": "Repository",
+    "sortField": "repository"
+  },
+  {
+    "keyName": "nb_approved",
+    "name": "nb_approved",
+    "title": "Nb. of approved",
+    "sortField": "nb_approved"
+  },
+  {
+    "keyName": "author",
+    "name": "author",
+    "title": "Author",
+    "sortField": "author"
+  },
+  {
+    "keyName": "milestone",
+    "name": "milestone",
+    "title": "Milestone",
+    "sortField": "milestone"
+  },
+  {
+    "keyName": "nb_issues",
+    "name": "nb_issues",
+    "title": "Issues number",
+    "sortField": "nb_issues"
+  },
+  {
+    "keyName": "files_types",
+    "name": "files_types",
+    "title": "Files types",
+    "sortField": "files_types"
+  }
+]

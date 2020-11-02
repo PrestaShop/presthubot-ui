@@ -107,7 +107,85 @@
     border-radius: 5px;
     background-color: $white;
     box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.15);
-    padding: 20px 30px;
     width: 100%;
+  }
+
+  .vuetable-body-wrapper {
+    overflow: scroll;
+  }
+
+  .vuetable {
+    min-width: 100%;
+
+    .vuetable-body {
+      tr {
+        &:nth-child(2n - 1) {
+          background-color: #f5f5f5;
+        }
+
+        td {
+          color: #000000;
+          font-size: 14px;
+          letter-spacing: 0;
+          line-height: 19px;
+          padding: 7px 30px;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 20px 15px;
+    }
+
+    th {
+      color: #000000;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 19px;
+      font-weight: 600;
+      position: relative;
+      padding-right: 25px;
+
+      &.sortable {
+        .sort-icon {
+          font-style: normal;
+          position: absolute !important;
+          right: 15px;
+          top: 39%;
+          transform: rotate(90deg) translateY(-50%);
+
+          &::after {
+            content: 'code';
+            font-family: Material Icons, Arial, Verdana, Tahoma, sans-serif;
+            display: block;
+          }
+        }
+      }
+
+      &.sorted-desc {
+        .sort-icon {
+          transform: translateY(-50%);
+          top: 52%;
+          right: 5px;
+
+          &::after {
+            content: 'keyboard_arrow_down';
+          }
+        }
+      }
+
+      &.sorted-asc {
+        .sort-icon {
+          transform: translateY(-50%);
+          top: 52%;
+          right: 5px;
+
+          &::after {
+            content: 'keyboard_arrow_up';
+          }
+        }
+      }
+    }
   }
 </style>

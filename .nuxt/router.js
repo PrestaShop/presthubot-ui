@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _6838bf37 = () => interopDefault(import('../pages/modules.vue' /* webpackChunkName: "pages/modules" */))
 const _170b2dfc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -22,6 +23,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/modules",
+    component: _6838bf37,
+    name: "modules"
+  }, {
     path: "/",
     component: _170b2dfc,
     name: "index"

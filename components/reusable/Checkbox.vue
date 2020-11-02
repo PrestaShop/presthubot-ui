@@ -30,11 +30,17 @@
         checked: false,
       };
     },
+    mounted() {
+      this.$parent.$on('uncheckAll', () => {
+        this.checked = false;
+      });
+    },
     watch: {
       checked(newValue): void {
         this.$emit('checkboxUpdate', {
           keyName: this.keyName,
-          value: newValue,
+          name: this.text,
+          checked: newValue,
         });
       },
     },
@@ -56,23 +62,30 @@
   .checkbox {
     position: relative;
     margin: $md-checkbox-margin;
+    cursor: pointer;
     text-align: left;
     background: $white;
     width: 220px;
-    padding: 8px;
     border-radius: 3px;
     margin: 5px 15px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    transition: 0.25s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.6);
+    }
 
     &.md-checkbox-inline {
       display: inline-block;
     }
 
     label {
-      padding-left: $md-checkbox-size + 8px;
+      padding: 8px;
+      padding-left: $md-checkbox-size + 25px;
       margin-bottom: 0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      cursor: pointer;
       font-weight: 600;
     }
 

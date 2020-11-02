@@ -2,7 +2,7 @@
   <ul class="menu" :class="{ column }">
     <li :key="item.id" v-for="item in items" class="menu-item">
       <nuxt-link :to="item.route" class="menu-link">
-        <icon :iconName="item.icon" />
+        <icon :icon-name="item.icon" />
         {{ item.name }}
       </nuxt-link>
     </li>
