@@ -30,7 +30,11 @@
           :fields="checkboxes.length > 0 ? checkboxes : fields"
           :data="datas"
           :data-manager="dataManager"
-        ></vuetable>
+        >
+          <template slot="tableHeader">
+            <vuetable-row-header></vuetable-row-header>
+          </template>
+        </vuetable>
       </div>
     </div>
   </div>
@@ -40,6 +44,7 @@
   import Vue from 'vue';
   import _ from 'lodash';
   import Vuetable from 'vuetable-2';
+  import VuetableRowHeader from 'vuetable-2/src/components/VuetableRowHeader.vue';
   import Checkbox from '~/components/reusable/Checkbox.vue';
   import { CheckboxInterface } from '~/interfaces/CheckboxInterface';
   import { QueryController } from '~/interfaces/QueryInterface';
@@ -58,6 +63,7 @@
       return {
         checkboxes: [],
         fields,
+        headers: [],
         datas: {
           data: datas,
         },
@@ -67,6 +73,7 @@
     components: {
       Checkbox,
       Vuetable,
+      VuetableRowHeader,
     },
     methods: {
       updateCheckboxes(checkbox: CheckboxInterface): void {
@@ -78,11 +85,14 @@
           this.checkboxes = this.checkboxes.filter(
             item => item.keyName !== checkbox.keyName
           );
+
+          this.headers = this.headers.filter(item => checkbox.keyName !== item);
         } else if (checkbox.checked) {
           const newCheckBox = checkbox;
 
           newCheckBox.sortField = newCheckBox.keyName;
           this.checkboxes.push(newCheckBox);
+          this.headers.push(newCheckBox.keyName);
         }
       },
       clear(): void {

@@ -10,4 +10,5 @@ export interface QueryController {
   fields: Array<CheckboxInterface>;
   datas: DataManager;
   perPage: number;
+  headers: Array<String>;
 }

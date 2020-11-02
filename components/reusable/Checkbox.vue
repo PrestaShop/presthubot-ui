@@ -39,7 +39,8 @@
       checked(newValue): void {
         this.$emit('checkboxUpdate', {
           keyName: this.keyName,
-          name: this.text,
+          name: this.keyName,
+          title: this.text,
           checked: newValue,
         });
       },
