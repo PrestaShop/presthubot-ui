@@ -1,13 +1,16 @@
 export default {
   mode: 'spa',
+  router: {
+    base: '/presthubot-ui/',
+  },
   /*
    ** Headers of the page
    */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
@@ -15,17 +18,18 @@ export default {
       },
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,600,700',
+        href:
+          'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,600,700',
       },
     ],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: {color: '#fff'},
+  loading: { color: '#fff' },
   /*
    ** Global CSS
    */
@@ -60,8 +64,8 @@ export default {
      ** Fix safari infinit reload
      */
     filenames: {
-      app: ({isDev}) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
-      chunk: ({isDev}) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
+      app: ({ isDev }) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
+      chunk: ({ isDev }) => (isDev ? '[name].[hash].js' : '[chunkhash].js'),
     },
     /*
      ** You can extend webpack config here

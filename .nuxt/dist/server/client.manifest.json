@@ -1,10 +1,10 @@
 {
-  "publicPath": "/_nuxt/",
+  "publicPath": "/presthubot-ui/_nuxt/",
   "all": [
     "../server/index.spa.html",
     "0d8a4900f4c84d946244.js",
-    "137914a782794114e08f.js",
-    "2c967d06ad7bb064b627.js",
+    "278b795537ea202a1161.js",
+    "5880f8c8f4355951f56a.js",
     "67542b4bc8d9bded0128.js",
     "LICENSES",
     "a547bae684a67e4676c8.js",
@@ -12,10 +12,10 @@
     "f7c52d7a68b7919b4e7d.js"
   ],
   "initial": [
-    "137914a782794114e08f.js",
+    "278b795537ea202a1161.js",
     "0d8a4900f4c84d946244.js",
     "a547bae684a67e4676c8.js",
-    "2c967d06ad7bb064b627.js"
+    "5880f8c8f4355951f56a.js"
   ],
   "async": [
     "67542b4bc8d9bded0128.js",
@@ -1661,8 +1661,8 @@
   },
   "assetsMapping": {
     "0d8a4900f4c84d946244.js": "0859c165",
-    "137914a782794114e08f.js": "6fca0322",
-    "2c967d06ad7bb064b627.js": "1a3ae26b",
+    "278b795537ea202a1161.js": "6fca0322",
+    "5880f8c8f4355951f56a.js": "1a3ae26b",
     "67542b4bc8d9bded0128.js": "2a130dde",
     "a547bae684a67e4676c8.js": "7ea1d828",
     "d02b58aa9aa686a49087.js": "7e1e61ce",
