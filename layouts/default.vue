@@ -139,6 +139,19 @@
       padding: 20px 15px;
     }
 
+    tr:first-child {
+      th {
+        padding-bottom: 10px;
+        min-width: 160px;
+      }
+    }
+
+    tr:nth-child(2) {
+      th {
+        padding-top: 0;
+      }
+    }
+
     th {
       color: #000000;
       font-size: 14px;
@@ -147,6 +160,7 @@
       font-weight: 600;
       position: relative;
       padding-right: 25px;
+      text-align: left;
 
       &.sortable {
         .sort-icon {

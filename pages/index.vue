@@ -35,7 +35,7 @@
             <vuetable-row-header></vuetable-row-header>
 
             <tr v-if="checkboxes.length > 0">
-              <td v-for="field in checkboxes" :key="field.keyName">
+              <th v-for="field in checkboxes" :key="field.keyName">
                 <custom-input
                   type="date"
                   v-if="field.keyName === 'creation_date'"
@@ -68,11 +68,11 @@
                   v-else
                   classes="input-search"
                 />
-              </td>
+              </th>
             </tr>
 
             <tr v-else>
-              <td v-for="field in fields" :key="field.keyName">
+              <th v-for="field in fields" :key="field.keyName">
                 <custom-input
                   type="date"
                   v-if="field.keyName === 'creation_date'"
@@ -103,7 +103,7 @@
                   v-else
                   classes="input-search"
                 />
-              </td>
+              </th>
             </tr>
           </template>
         </vuetable>

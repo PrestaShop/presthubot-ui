@@ -50,6 +50,7 @@
   .dropdown {
     position: relative;
     width: 100%;
+    min-width: 160px;
 
     .checkbox {
       width: 100%;
@@ -66,6 +67,8 @@
       border: 1px solid #b3c7cd;
       border-radius: 3px;
       background-color: #ffffff;
+      justify-content: flex-start;
+      text-align: left;
       padding: 10px 18px;
       padding-right: 36px;
       width: 100%;
