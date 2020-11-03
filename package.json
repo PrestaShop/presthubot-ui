@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc19",
@@ -45,6 +46,7 @@
     "jest": "^24.1.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
+    "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2",
     "stylelint": "^10.1.0",
     "stylelint-config-prestashop": "^1.0.2",
