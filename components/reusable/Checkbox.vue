@@ -11,6 +11,7 @@
 <script lang="ts">
   import Vue from 'vue';
   import { CheckBoxStates } from '~/interfaces/CheckBoxInterface';
+  import EventBus from '~/components/reusable/EventBus';
 
   export default Vue.extend({
     props: {
@@ -31,7 +32,7 @@
       };
     },
     mounted() {
-      this.$parent.$on('uncheckAll', () => {
+      EventBus.$on('uncheckAll', () => {
         this.checked = false;
       });
     },

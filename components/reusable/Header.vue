@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <Menu />
-    <img src="logo-presthubot.png" title="Logo Presthubot" />
+    <img src="logo-presthubot.svg" title="Logo Presthubot" />
     <logo />
   </div>
 </template>

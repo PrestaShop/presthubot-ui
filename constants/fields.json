@@ -18,10 +18,10 @@
     "sortField": "branch_name"
   },
   {
-    "keyName": "Nb. of comments",
+    "keyName": "nb_comments",
     "title": "Nb. of comments",
     "name": "nb_comments",
-    "sortField": "Nb. of comments"
+    "sortField": "nb_comments"
   },
   {
     "keyName": "id",
@@ -69,6 +69,7 @@
     "keyName": "files_types",
     "name": "files_types",
     "title": "Files types",
-    "sortField": "files_types"
+    "sortField": "files_types",
+    "items": ["JS", "PHP", "TWIG"]
   }
 ]

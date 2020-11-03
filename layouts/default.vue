@@ -112,6 +112,7 @@
 
   .vuetable-body-wrapper {
     overflow: scroll;
+    min-height: 35vh;
   }
 
   .vuetable {
