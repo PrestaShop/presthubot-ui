@@ -2,7 +2,7 @@ export default {
   mode: 'spa',
   target: 'static',
   router: {
-    base: '/presthubot-ui/',
+    base: '/presthubot-ui/dist/',
   },
   /*
    ** Headers of the page
